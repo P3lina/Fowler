@@ -17,5 +17,12 @@ public class ProgramTest {
         c1.addRental(r1);
         c1.addRental(r2);
         c1.addRental(r3);
+        assertEquals(m1.getName(), new Movie("movie1", new NewReleasePrice()).getName());
+        assertEquals(m2.getName(), new Movie("movie2", new ChildrensPrice()).getName());
+        assertEquals(m3.getName(), new Movie("movie3", new RegularPrice()).getName());
+        assertEquals(r1.getCharge(), new Rental(m1, 10).getCharge());
+        assertEquals(r2.getCharge(), new Rental(m2, 5).getCharge());
+        assertEquals(r3.getCharge(), new Rental(m3, 4).getCharge());
+        assertEquals(c1.getName(), "joe");
     }
 }
