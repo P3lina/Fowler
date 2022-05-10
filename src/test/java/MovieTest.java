@@ -8,22 +8,22 @@ class MovieTest {
     Movie movie;
     @BeforeAll
     void beforeAll() {
-        this.movie = new Movie("title", 10);
+        this.movie = new Movie("title", new NewReleasePrice());
     }
 
     @Test
     void getPriceCode() {
-        assertEquals(movie.getPriceCode(), 10);
+        assertEquals(movie.getPrice().getPriceCode(), new NewReleasePrice().getPriceCode());
     }
 
     @Test
     void setPriceCode() {
-        movie.setPriceCode(20);
-        assertEquals(movie.getPriceCode(), 20);
+        movie.setPrice(new RegularPrice());
+        assertEquals(movie.getPrice().getPriceCode(), new RegularPrice().getPriceCode());
     }
 
     @Test
     void getTitle() {
-        assertEquals(movie.getTitle(), "title");
+        assertEquals(movie.getName(), "title");
     }
 }

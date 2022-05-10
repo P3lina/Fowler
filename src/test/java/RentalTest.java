@@ -11,7 +11,7 @@ class RentalTest {
 
     @BeforeAll
     void beforeAll() {
-        movie = new Movie("title", 10);
+        movie = new Movie("title", new NewReleasePrice());
         rental = new Rental(movie, 20);
     }
     @Test
